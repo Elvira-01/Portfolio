@@ -57,7 +57,7 @@
         var path = ROUTES[location.hash] || '/';
         if (path === last) return;
         last = path;
-        window.umami.track(function (props) { return Object.assign({}, props, { url: path }); });
+        window.umami.track(function (props) { return Object.assign({}, props, { url: path + location.search }); });
       };
       window.addEventListener('hashchange', window.__umamiTrack);
     })();
